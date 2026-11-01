@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-logo" data-icon="store"></div>
+                <div>
+                    <div class="brand-name" id="brandName">Mi Tienda</div>
+                    <div class="brand-sub">Punto de Venta</div>
+                </div>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#dashboard" data-route="dashboard"><span data-icon="home"></span>Dashboard</a>
+                <a href="#ventas" data-route="ventas"><span data-icon="cart"></span>Ventas</a>
+                <a href="#apartados" data-route="apartados"><span data-icon="calendar"></span>Apartados</a>
+                <a href="#productos" data-route="productos"><span data-icon="box"></span>Productos</a>
+                <a href="#reportes" data-route="reportes"><span data-icon="file"></span>Reportes</a>
+                <a href="#usuarios" data-route="usuarios" data-admin><span data-icon="users"></span>Usuarios</a>
+                <a href="#configuracion" data-route="configuracion"><span data-icon="gear"></span>Configuración</a>
+            </nav>
+            <div class="user-box" id="userBox">
+                <div class="avatar" id="userAvatar">?</div>
+                <div class="info">
+                    <div class="name" id="userName"></div>
+                    <div class="role" id="userRole"></div>
+                </div>
+                <span data-icon="chevron"></span>
+                <div class="user-menu" id="userMenu">
+                    <button onclick="Views.cambiarPassword()"><span data-icon="lock"></span>Cambiar contraseña</button>
+                    <button onclick="Api.cerrarSesion()"><span data-icon="logout"></span>Cerrar sesión</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main" id="main"></main>
+    </div>
+
+    <div class="modal-bg" id="modalBg">
+        <div class="modal" id="modal"></div>
+    </div>
+    <div class="toasts" id="toasts"></div>
+    <div id="printArea"></div>
+
+    <script src="config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/printer.js"></script>
+    <script src="js/vendor/jsQR.js"></script>
+    <script src="js/app.js"></script>
+    <!-- Librerías para exportación PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
